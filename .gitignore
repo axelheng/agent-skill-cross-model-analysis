@@ -1,6 +1,7 @@
 # Local environment and editor files
 .DS_Store
 .env
+*.env
 .venv/
 __pycache__/
 .pytest_cache/
@@ -12,4 +13,3 @@ trajectories/*
 
 # Generated analysis outputs
 analysis/outputs/
-
