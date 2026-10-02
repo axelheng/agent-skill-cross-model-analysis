@@ -1,0 +1,15 @@
+# Local environment and editor files
+.DS_Store
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Generated or potentially large trajectory artifacts
+trajectories/*
+!trajectories/.gitkeep
+
+# Generated analysis outputs
+analysis/outputs/
+
