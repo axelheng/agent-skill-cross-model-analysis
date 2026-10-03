@@ -13,3 +13,6 @@ trajectories/*
 
 # Generated analysis outputs
 analysis/outputs/
+
+# Local PDF renders and other scratch work
+work/
