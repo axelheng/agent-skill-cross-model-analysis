@@ -35,3 +35,38 @@ sustain autonomous tool use under either skill. Follow-up scaffolding shows
 that external sequencing and supplied diagnoses can partially recover behavior,
 but do not demonstrate autonomous improvement. See `report.md` for the full
 analysis and limitations.
+
+## Reproduction
+
+The primary comparison uses these skill files:
+
+- `experiments/skills/debugging-baseline.md`
+- `experiments/skills/debugging-revised.md`
+
+Run the complete 48-run formal battery from the repository root with:
+
+```bash
+python3 scripts/run_formal_experiment.py --repetitions 3
+```
+
+For a single run, use:
+
+```bash
+python3 scripts/run_agent_experiment.py \
+  --model llama3.1:8b \
+  --skill debugging-baseline.md \
+  --task tool_debug_task \
+  --run-id example-baseline
+```
+
+The runner saves trajectory JSON files under `trajectories/`. Summarize a
+selected trajectory with:
+
+```bash
+python3 scripts/analyze_trajectories.py trajectories/example-baseline.json
+```
+
+Diagnostic follow-ups are launched with scripts such as
+`run_bridge_experiment.py`, `run_staged_experiment.py`,
+`run_diagnosis_experiment.py`, and `run_repair_only_experiment.py` in the
+`scripts/` directory.
