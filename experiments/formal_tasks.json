@@ -1,0 +1,12 @@
+{
+  "tasks": [
+    {"name": "tool_debug_task", "role": "case-normalization"},
+    {"name": "boundary_debug_task", "role": "boundary-condition"},
+    {"name": "empty_input_debug_task", "role": "empty-input-or-None"},
+    {"name": "parsing_debug_task", "role": "parsing-validation"}
+  ],
+  "held_out": {"name": "heldout_debug_task", "role": "held-out related bug"},
+  "repetitions": 3,
+  "models": ["llama3.1:8b", "qwen3.6:35b"],
+  "skills": ["debugging-baseline.md", "debugging-revised.md"]
+}

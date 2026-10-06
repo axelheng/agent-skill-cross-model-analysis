@@ -19,6 +19,10 @@ def summarize(path: Path) -> dict:
         "model": data["model"],
         "skill": data["skill"],
         "success": data.get("evaluation", {}).get("passed", False),
+        "native_call_rate": sum(e.get("call_classification", {}).get("native_call", False) for e in assistant_events) / max(len(assistant_events), 1),
+        "pseudo_call": any(e.get("call_classification", {}).get("pseudo_call", False) for e in assistant_events),
+        "edited_before_testing": any(e.get("tool") == "replace_in_file" and not any(x.get("tool") == "run_tests" and x.get("step", -1) < e.get("step", -1) for x in tool_events) for e in tool_events),
+        "final_validation": any(e.get("tool") == "run_tests" and e.get("step", -1) > 0 for e in tool_events),
         "assistant_turns": len(assistant_events),
         "tool_calls": len(tool_events),
         "tool_sequence": tools,
@@ -27,6 +31,7 @@ def summarize(path: Path) -> dict:
         "usage": data.get("usage", {}),
         "api_errors": data.get("api_errors", []),
         "final_content": data.get("final_content"),
+        "grounding": data.get("grounding", {}),
     }
 
 

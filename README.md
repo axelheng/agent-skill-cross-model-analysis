@@ -12,13 +12,14 @@ skill for weaker models.
 - `scripts/` — reproducible utilities
 - `report.md` — working research report
 
-## Current milestone: reconnaissance and pilots
+## Current milestone: formal experiment and diagnostic follow-ups
 
-The first tool-enabled pilot is implemented in
-`experiments/tool_debug_task/`. It compares a baseline debugging skill with an
-evidence-gated revision, using the same four tools and task repository for each
-model. The runner saves full trajectories under `trajectories/` (ignored by
-Git), and `scripts/analyze_trajectories.py` summarizes tool behavior.
+The repository contains the original tool-enabled pilot, a completed 48-run
+formal battery, and follow-up protocol and scaffolding experiments. It compares
+a baseline debugging skill with an evidence-gated revision, using the same
+tools and related debugging fixtures across models. The runner saves full
+trajectories under `trajectories/` (ignored by Git), and
+`scripts/analyze_trajectories.py` summarizes tool behavior.
 
 The initial pilot result is a useful capability boundary: `qwen3.6:35b` completed
 the task with six native tool calls, while `llama3.1:8b` produced hypothetical
@@ -27,8 +28,10 @@ revision. This is exploratory evidence, not yet the formal experiment or a
 claim that the revised skill improves performance. See `analysis/tool-pilot.md`
 and `report.md` for the phase labels, evidence, and limitations.
 
-## Next milestone: formal experiment
+## Main result
 
-Before drawing conclusions, run 3–5 related tasks with repeated model/task
-conditions, record the exact configuration, and evaluate whether any skill
-change generalizes beyond the motivating pilot task.
+The stronger model completed all formal tasks, while the weaker model failed to
+sustain autonomous tool use under either skill. Follow-up scaffolding shows
+that external sequencing and supplied diagnoses can partially recover behavior,
+but do not demonstrate autonomous improvement. See `report.md` for the full
+analysis and limitations.
