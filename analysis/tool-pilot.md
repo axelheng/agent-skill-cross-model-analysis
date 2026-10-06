@@ -50,10 +50,14 @@ configuration.
 
 ## Status and next phase
 
-The pilot is complete. The formal experiment has not started. The next phase
-should use multiple related tasks, repeated runs, exact configuration records,
-and a predeclared success rubric. Only after that should a revised skill be
-evaluated as an intervention.
+The pilot is complete and served as reconnaissance for the formal experiment.
+The subsequent formal battery used four related tasks, repeated runs, exact
+configuration records, and a predeclared success rubric. It compared the
+baseline and revised skills across both models. The formal results and later
+diagnostic follow-ups are reported in the repository root's `report.md`.
+
+The pilot should therefore be read as preliminary evidence that motivated the
+larger study, not as the final evaluation of the revised skill.
 
 ## Interpretation and limits
 
@@ -61,6 +65,6 @@ The most informative difference is behavioral, not length: successful tool
 execution versus simulated tool use. The sample is intentionally small—one
 task, one run per main condition, and one strong/weak pair—so it cannot
 support broad model rankings or causal claims about the revised skill. The
-next experiment should add several related debugging tasks, repeated seeds if
-the service exposes them, and a model/endpoint condition known to support
-native tool calls for the weaker capability level.
+formal study addressed some of these limitations, but the pilot's small sample
+still limits what can be inferred from it alone. The broader report discusses
+the remaining limitations and next research directions.
